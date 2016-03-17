@@ -1,19 +1,25 @@
 /**
  * Test case for prepareBudEngine.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var prepareBudEngine = require('../lib/prepare_bud_engine.js');
+const prepareBudEngine = require('../lib/prepare_bud_engine.js'),
+    assert = require('assert');
 
-exports.setUp = function (done) {
-    done();
-};
+describe('prepare-bud-engine', () => {
 
-exports.tearDown = function (done) {
-    done();
-};
+    before((done) => {
+        done();
+    });
 
-exports['Prepare bud engine'] = function (test) {
-    test.done();
-};
+    after((done) => {
+        done();
+    });
+
+
+    it('Prepare bud engine', (done) => {
+        done();
+    });
+});
 

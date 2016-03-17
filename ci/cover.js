@@ -6,17 +6,18 @@
 
 "use strict";
 
-var path = require('path'),
+const path = require('path'),
+    expandglob = require('expandglob'),
     apeTasking = require('ape-tasking'),
     apeCovering = require('ape-covering');
 
-var basedir = path.resolve(__dirname, '..');
+let basedir = path.resolve(__dirname, '..');
 process.chdir(basedir);
 
 apeTasking.runTasks('cover', [
-    function (callback) {
+    (callback) => {
         apeCovering.measureCoverage(
-            require.resolve('./test.js'), [], {
+            'mocha', expandglob.sync('test/*_test.js'), {
                 dir: 'coverage'
             }, callback
         );

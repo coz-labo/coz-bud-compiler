@@ -1,40 +1,36 @@
 /**
  * Test case for budCompiler.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var BudCompiler = require('../lib/bud_compiler.js');
+const BudCompiler = require('../lib/bud_compiler.js'),
+    assert = require('assert');
 
-exports.setUp = function (done) {
-    done();
-};
+describe('budCompiler', () => {
+    it('Bud compiler', (done) => {
 
-exports.tearDown = function (done) {
-    done();
-};
+        let compiler = new BudCompiler({
+            resolveTmpl(tmpl) {
+                return tmpl;
+            },
+            resolveEngine(engine) {
+                return function () {
+                    this.compile = function (bud, callback) {
+                        callback(null, null);
+                    }
+                };
+            }
+        });
 
-exports['Bud compiler'] = function (test) {
+        let bud = require('../doc/mockups/mock-bud.bud');
 
-    var compiler = new BudCompiler({
-        resolveTmpl: function (tmpl) {
-            return tmpl;
-        },
-        resolveEngine: function (engine) {
-            return function () {
-                this.compile = function (bud, callback) {
-                    callback(null, null);
-                }
-            };
-        }
+        compiler.compile(bud, (err, bud) => {
+            assert.ifError(err);
+            assert.ok(bud);
+            done();
+        });
+
     });
-
-    var bud = require('../docs/mockups/mock-bud.bud');
-
-    compiler.compile(bud, function (err, bud) {
-        test.ifError(err);
-        test.ok(bud);
-        test.done();
-    });
-
-};
+});
 

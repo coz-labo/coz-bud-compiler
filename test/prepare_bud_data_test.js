@@ -1,19 +1,25 @@
 /**
  * Test case for prepareBudData.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var prepareBudData = require('../lib/prepare_bud_data.js');
+const prepareBudData = require('../lib/prepare_bud_data.js'),
+    assert = require('assert');
 
-exports.setUp = function(done) {
-    done();
-};
+describe('prepare-bud-data', () => {
 
-exports.tearDown = function(done) {
-    done();
-};
+    before((done) => {
+        done();
+    });
 
-exports['Prepare bud data'] = function(test){
-    test.done();
-};
+    after((done) => {
+        done();
+    });
+
+
+    it('Prepare bud data', (done) => {
+        done();
+    });
+});
 

@@ -1,19 +1,25 @@
 /**
  * Test case for prepareBudTmpl.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var prepareBudTmpl = require('../lib/prepare_bud_tmpl.js');
+const prepareBudTmpl = require('../lib/prepare_bud_tmpl.js'),
+    assert = require('assert');
 
-exports.setUp = function (done) {
-    done();
-};
+describe('prepare-bud-tmpl', () => {
 
-exports.tearDown = function (done) {
-    done();
-};
+    before((done) => {
+        done();
+    });
 
-exports['Prepare bud tmpl'] = function (test) {
-    test.done();
-};
+    after((done) => {
+        done();
+    });
+
+
+    it('Prepare bud tmpl', (done) => {
+        done();
+    });
+});
 

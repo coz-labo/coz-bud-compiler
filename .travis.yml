@@ -1,14 +1,12 @@
 language: node_js
 node_js:
-- '0.11'
+- '4.0'
 before_install: 
+- npm install mocha istanbul -g
 install:
 - npm install
 script:
-- npm run build
-- npm run test
-- npm run cover
-- npm run report
-env:
-  global:
-    secure: AcCzL/snb0jNENXwxI/sXO9sfjLZgSqDdQOidosxD5TEioujQLNLpXOM1YPHyf68/5v+gB7VHfpy6WkPi/2ahUPWDUlInH68epgdu0b1BVEXRIcL6U+K++G+qkK0a9WfT0lw7yBAiFGLfYcxNTPEFeyMPwzo+Brf49dx0C2dQYvuljDO2dlw4GCETKDteo4fhAXeB8pZENSMOV2XcRZCMmIezJ4HY2RIi4XCebAeg/yX9mK/7ZrIMmef1uqD1iehEpJV4pYCBSdHBNp00aPclKVTXBON/rBUXBUQ8YzudPFzlm/ux0ruMRK/xAxx3/Td3Q6JToS13VMvN51JkHf6hEZiRYIs+FNV+oGRzh8u3H7dWuJmLR0GnsU/M7ufiptVLkI65pDVuPha4GG4IHMcXWu0RcQtb63EsmS6T/q6NLaA29YJYm2gZXuzO1QlPKOnDMd/vu688z6BjGVya3JILGa86yX/EhQA2wFzZG8Fa8jFo2/SNTP6Zrk3DSvlztgBjnGNDBC5sDRZUTA2nKUDe807FQ10Snzc3UmtbYPX0riRxrN/wZB0sMiMoIashhbvdUf94d6xDa3AnTpK5ZRX6briYuMCZDfn0rWhVY+gUaV91kcwbbaEbWudM92AcXaGthJpBBCnjXhCvajLB5PDgXBTtV4qa/U5V551W4/X2L8=
+- ./ci/build.js
+- ./ci/test.js
+- ./ci/cover.js
+- ./ci/report.js
