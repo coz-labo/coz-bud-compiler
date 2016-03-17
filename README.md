@@ -42,6 +42,46 @@ Bud compiler for coz.
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
+
+<a name="section-doc-guides-01-installation-md"></a>
+Installation
+-----
+
+```bash
+npm install coz-bud-compiler --save
+```
+
+
+<!-- Section from "doc/guides/01.Installation.md.hbs" End -->
+
+<!-- Section from "doc/guides/02.Usage.md.hbs" Start -->
+
+<a name="section-doc-guides-02-usage-md"></a>
+Usage
+----
+
+```javascript
+"use strict";
+
+const cozBudCompiler = require('coz-bud-compiler');
+
+let compiler = cozBudCompiler({
+    resolveTmpl() {
+        /*...*/
+    },
+    resolveEngine() {
+        /*...*/
+    }
+});
+
+compiler.compile({/*bud*/}, (err, buds) => {
+    /*...*/
+});
+```
+
+<!-- Section from "doc/guides/02.Usage.md.hbs" End -->
+
 
 <!-- Sections Start -->
 
