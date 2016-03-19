@@ -1,6 +1,6 @@
 {
   "name": "coz-bud-compiler",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Bud compiler for coz.",
   "main": "lib",
   "scripts": {
@@ -24,7 +24,8 @@
   "dependencies": {
     "argx": "^2.0.2",
     "async": "^1.5.2",
-    "coz-bud": "^2.0.0"
+    "coz-bud": "^2.0.0",
+    "expandglob": "^2.0.0"
   },
   "devDependencies": {
     "ape-covering": "^2.0.2",
