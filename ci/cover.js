@@ -1,25 +1,22 @@
 #!/usr/bin/env node
 
 /**
- * Run coverage.
+ * Measure test coverage.
  */
 
 "use strict";
 
-const path = require('path'),
-    expandglob = require('expandglob'),
-    apeTasking = require('ape-tasking'),
-    apeCovering = require('ape-covering');
+process.chdir(__dirname + '/..');
 
-let basedir = path.resolve(__dirname, '..');
-process.chdir(basedir);
+const apeTasking = require('ape-tasking'),
+    apeCovering = require('ape-covering');
 
 apeTasking.runTasks('cover', [
     (callback) => {
-        apeCovering.measureCoverage(
-            'mocha', expandglob.sync('test/*_test.js'), {
-                dir: 'coverage'
-            }, callback
-        );
+        apeCovering.measureCoverage('_mocha', [
+            'test/*_test.js'
+        ], {
+            dir: 'coverage'
+        }, callback);
     }
 ], true);
