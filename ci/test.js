@@ -6,16 +6,14 @@
 
 'use strict'
 
-const path = require('path'),
-    apeTasking = require('ape-tasking'),
-    apeTesting = require('ape-testing')
+const path = require('path')
+const apeTasking = require('ape-tasking')
+const apeTesting = require('ape-testing')
 
 let basedir = path.resolve(__dirname, '..')
 
 process.chdir(basedir)
 
 apeTasking.runTasks('test', [
-    (callback) => {
-        apeTesting.runMocha('test/**/*_test.js', callback)
-    }
+  () => apeTesting.runMocha('test/**/*_test.js')
 ], true)
