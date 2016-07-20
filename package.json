@@ -1,6 +1,6 @@
 {
   "name": "coz-bud-compiler",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Bud compiler for coz.",
   "main": "lib",
   "scripts": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "argx": "^2.0.2",
     "async": "^2.0.0",
-    "coz-bud": "^3.0.0"
+    "coz-bud": "^3.0.2"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
@@ -34,7 +34,7 @@
     "ape-testing": "^4.0.1",
     "ape-tmpl": "^5.0.13",
     "ape-updating": "^4.0.4",
-    "coz": "^6.0.11",
+    "coz": "^6.0.13",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1"
   },
