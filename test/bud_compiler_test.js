@@ -10,15 +10,15 @@ const assert = require('assert')
 describe('budCompiler', () => {
   it('Bud compiler', (done) => {
     let compiler = new BudCompiler({
-      resolveTmpl(tmpl) {
-        return tmpl;
+      resolveTmpl (tmpl) {
+        return tmpl
       },
-      resolveEngine(engine) {
+      resolveEngine (engine) {
         return function () {
           this.compile = function (bud, callback) {
             callback(null, null)
           }
-        };
+        }
       }
     })
 
