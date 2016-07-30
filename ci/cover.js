@@ -8,11 +8,12 @@
 
 process.chdir(`${__dirname}/..`)
 
-const { runTasks } = require('ape-tasking')
+const apeTasking = require('ape-tasking')
 const { coverage } = require('amocha')
 
-runTasks('cover', [
+apeTasking.runTasks('cover', [
   () => coverage('test/*_test.js', {
     dir: 'coverage'
   })
 ], true)
+
