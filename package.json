@@ -1,6 +1,6 @@
 {
   "name": "coz-bud-compiler",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Bud compiler for coz.",
   "main": "lib",
   "scripts": {
