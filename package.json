@@ -1,8 +1,8 @@
 {
   "name": "coz-bud-compiler",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "Bud compiler for coz.",
-  "main": "lib",
+  "main": "shim/node",
   "scripts": {
     "test": "node ./ci/test.js",
     "prepublish": "node ./ci/build.js && node ./ci/shim.js"
@@ -42,7 +42,7 @@
     "mkdirp": "^0.5.1"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=4",
+    "npm": ">=2"
   }
 }
