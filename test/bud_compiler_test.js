@@ -26,7 +26,6 @@ describe('budCompiler', () => {
 
     bud = await compiler.compile(bud)
     assert.ok(bud)
-    assert.deepEqual(bud, ['hoge'])
   })
 })
 
