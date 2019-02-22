@@ -1,16 +1,18 @@
-"use strict";
+'use strict'
 
-const cozBudCompiler = require('coz-bud-compiler');
+const cozBudCompiler = require('coz-bud-compiler')
 
-let compiler = cozBudCompiler({
+async function main() {
+  let compiler = cozBudCompiler({
     resolveTmpl() {
-        /*...*/
+      /*...*/
     },
     resolveEngine() {
-        /*...*/
+      /*...*/
     }
-});
+  })
 
-compiler.compile({/*bud*/}, (err, buds) => {
-    /*...*/
-});
+  const buds = await compiler.compile({/*bud*/ })
+}
+
+void main()

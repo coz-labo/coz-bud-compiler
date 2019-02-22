@@ -8,15 +8,15 @@ const BudCompiler = require('../lib/bud_compiler.js')
 const assert = require('assert')
 
 describe('budCompiler', () => {
-  it('Bud compiler', (done) => {
+  it('Bud compiler', async () => {
     let compiler = new BudCompiler({
-      resolveTmpl (tmpl) {
+      resolveTmpl(tmpl) {
         return tmpl
       },
-      resolveEngine (engine) {
+      resolveEngine(engine) {
         return function () {
           this.compile = function (bud, callback) {
-            callback(null, null)
+            callback(null, 'hoge')
           }
         }
       }
@@ -24,11 +24,9 @@ describe('budCompiler', () => {
 
     let bud = require('../doc/mockups/mock-bud.bud')
 
-    compiler.compile(bud, (err, bud) => {
-      assert.ifError(err)
-      assert.ok(bud)
-      done()
-    })
+    bud = await compiler.compile(bud)
+    assert.ok(bud)
+    assert.deepEqual(bud, ['hoge'])
   })
 })
 

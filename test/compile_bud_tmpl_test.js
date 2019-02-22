@@ -9,8 +9,8 @@ const compileBudTmpl = require('../lib/compile_bud_tmpl.js'),
 
 describe('compileBudTmpl', () => {
 
-  it('Compile bud tmpl', (done) => {
-    compileBudTmpl({
+  it('Compile bud tmpl', async () => {
+    const bud = compileBudTmpl({
       tmpl: '{{name}}',
       engine: {
         compile(tmpl, callback) {
@@ -18,10 +18,8 @@ describe('compileBudTmpl', () => {
           callback(null)
         }
       }
-    }, (err) => {
-      assert.ifError(err)
-      done()
     })
+    assert.ok(bud)
   })
 })
 
