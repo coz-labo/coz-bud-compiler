@@ -1,6 +1,6 @@
 {
   "name": "coz-bud-compiler",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Bud compiler for coz.",
   "main": "lib",
   "scripts": {
@@ -24,12 +24,10 @@
   "homepage": "https://github.com/coz-labo/coz-bud-compiler#readme",
   "dependencies": {
     "argx": "^3.0.0",
-    "babel-runtime": "^6.11.6",
     "coz-bud": "^4.0.0"
   },
   "devDependencies": {
     "ababel": "^5.0.9",
-    "ababel-es2015": "^2.0.2",
     "amocha": "^5.0.0",
     "ape-releasing": "^5.0.0",
     "ape-reporting": "^3.0.1",
